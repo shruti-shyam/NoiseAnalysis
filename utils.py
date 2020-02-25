@@ -30,3 +30,10 @@ def median_filter_analysis(image, filter_size=5):
     filtered_image = median_filter(equalised_image, size=filter_size)
     noise_image = equalised_image - filtered_image
     return noise_image
+
+
+def get_patch_statistics(img_patch):
+    # accepts only gray scale images
+    # return mean and variance of patch
+    img = np.asarray(img_patch)
+    return np.mean(img), np.var(img)
